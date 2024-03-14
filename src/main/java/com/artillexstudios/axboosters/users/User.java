@@ -1,7 +1,8 @@
 package com.artillexstudios.axboosters.users;
 
-import com.artillexstudios.axboosters.booster.Booster;
+import com.artillexstudios.axboosters.booster.ActiveBooster;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
@@ -14,7 +15,7 @@ public class User {
         this.name = player.getName();
     }
 
-    public void updateBossBar(ArrayList<Booster> activeBoosters) {
+    public void updateBossBar(@NotNull ArrayList<ActiveBooster> activeBoosters) {
     }
 
     public Player getPlayer() {

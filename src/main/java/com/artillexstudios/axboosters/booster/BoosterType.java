@@ -1,37 +1,36 @@
 package com.artillexstudios.axboosters.booster;
 
-import com.artillexstudios.axapi.libs.boostedyaml.boostedyaml.block.implementation.Section;
-import com.artillexstudios.axapi.utils.ItemBuilder;
-import com.artillexstudios.axapi.utils.StringUtils;
+import com.artillexstudios.axboosters.hooks.booster.BoosterHook;
 import net.kyori.adventure.bossbar.BossBar;
 import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
 
 public class BoosterType {
-    private final String type;
-    private final String bossbarName;
-    private final BossBar.Color bossbarColor;
-    private final BossBar.Overlay bossbarStyle;
-    private final String chatStart;
-    private final String chatEnd;
-    private final ItemStack item;
+    private String name;
+    private final ArrayList<BoosterHook> boosted = new ArrayList<>();
+    private String bossbarName;
+    private BossBar.Color bossbarColor;
+    private BossBar.Overlay bossbarStyle;
+    private boolean bossbarEnabled;
+    private String chatStart;
+    private String chatEnd;
+    private ItemStack item;
+    private String itemName;
 
-    public BoosterType(@NotNull Section section) {
-        this.type = section.getString("type");
-        this.bossbarName = section.getString("bossbar.name");
-        this.bossbarColor = BossBar.Color.valueOf(section.getString("bossbar.color").toUpperCase());
-        this.bossbarStyle = BossBar.Overlay.valueOf(section.getString("bossbar.style").toUpperCase());
-        this.chatStart = StringUtils.formatToString(section.getString("chat.start"));
-        this.chatEnd = StringUtils.formatToString(section.getString("chat.end"));
-        this.item = new ItemBuilder(section.getSection("item")).get();
+    public BoosterType() {
+    }
+
+    public String getName() {
+        return name;
     }
 
     public BossBar.Color getBossbarColor() {
         return bossbarColor;
     }
 
-    public String getType() {
-        return type;
+    public ArrayList<BoosterHook> getBoosted() {
+        return boosted;
     }
 
     public BossBar.Overlay getBossbarStyle() {
@@ -40,6 +39,10 @@ public class BoosterType {
 
     public String getBossbarName() {
         return bossbarName;
+    }
+
+    public boolean isBossbarEnabled() {
+        return bossbarEnabled;
     }
 
     public String getChatEnd() {
@@ -52,5 +55,9 @@ public class BoosterType {
 
     public ItemStack getItem() {
         return item.clone();
+    }
+
+    public String getItemName() {
+        return itemName;
     }
 }

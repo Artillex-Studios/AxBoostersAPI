@@ -1,15 +1,15 @@
 package com.artillexstudios.axboosters.schedulers;
 
-import com.artillexstudios.axboosters.booster.Booster;
+import com.artillexstudios.axboosters.booster.ActiveBooster;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 public class TickBoosters {
-    private static ArrayList<Booster> activeBoosters = new ArrayList<>();
+    private static final ArrayList<ActiveBooster> activeBoosters = new ArrayList<>();
 
     @NotNull
-    public static ArrayList<Booster> getActiveBoosters() {
+    public static ArrayList<ActiveBooster> getActiveBoosters() {
         return activeBoosters;
     }
 }

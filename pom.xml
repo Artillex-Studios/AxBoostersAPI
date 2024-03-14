@@ -6,7 +6,7 @@
 
     <groupId>com.artillexstudios</groupId>
     <artifactId>AxBoostersAPI</artifactId>
-    <version>1</version>
+    <version>3</version>
     <packaging>jar</packaging>
 
     <name>AxBoostersAPI</name>
@@ -57,16 +57,16 @@
 
     <repositories>
         <repository>
+            <id>Artillex-Studios</id>
+            <url>https://repo.artillex-studios.com/releases/</url>
+        </repository>
+        <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
-        </repository>
-        <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
         </repository>
     </repositories>
 
@@ -78,10 +78,17 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.Artillex-Studios.AxAPI</groupId>
-            <artifactId>AxAPI</artifactId>
-            <version>1.1</version>
+            <groupId>com.artillexstudios.axapi</groupId>
+            <artifactId>axapi</artifactId>
+            <version>1.4.89</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>Artillex-Studios</id>
+            <url>https://repo.artillex-studios.com/releases/</url>
+        </repository>
+    </distributionManagement>
 </project>

@@ -6,9 +6,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 
-import static com.artillexstudios.axboosters.AxBoosters.MESSAGES;
-
-public class Booster {
+public class ActiveBooster {
     private Integer id;
     private final UUID owner;
     private final String type;
@@ -17,7 +15,7 @@ public class Booster {
     private final int length;
     private Long started = null;
 
-    public Booster(@NotNull UUID owner, @NotNull String type, @NotNull Audience audience, float multiplier, int length) {
+    public ActiveBooster(@NotNull UUID owner, @NotNull String type, @NotNull Audience audience, float multiplier, int length) {
         this.owner = owner;
         this.type = type;
         this.audience = audience;
@@ -25,7 +23,7 @@ public class Booster {
         this.length = length;
     }
 
-    public Booster(int id, @NotNull UUID owner, @NotNull String type, @NotNull Audience audience, float multiplier, int length) {
+    public ActiveBooster(int id, @NotNull UUID owner, @NotNull String type, @NotNull Audience audience, float multiplier, int length) {
         this.id = id;
         this.owner = owner;
         this.type = type;
@@ -34,7 +32,7 @@ public class Booster {
         this.length = length;
     }
 
-    public Booster(int id, @NotNull UUID owner, @NotNull String type, @NotNull Audience audience, float multiplier, int length, long started) {
+    public ActiveBooster(int id, @NotNull UUID owner, @NotNull String type, @NotNull Audience audience, float multiplier, int length, long started) {
         this.id = id;
         this.owner = owner;
         this.type = type;
@@ -78,6 +76,6 @@ public class Booster {
     }
 
     public BoosterType getBoosterType() {
-        return new BoosterType(MESSAGES.getSection("boost-types." + type));
+        return Boosters.getBoosters().get(type);
     }
 }

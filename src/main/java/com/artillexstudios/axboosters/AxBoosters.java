@@ -7,12 +7,13 @@ import com.artillexstudios.axapi.utils.MessageUtils;
 import com.artillexstudios.axboosters.database.Database;
 
 public final class AxBoosters extends AxPlugin {
-    private static AxPlugin instance;
     public static Config CONFIG;
-    public static Config MESSAGES;
+    public static Config LANG;
+    public static Config GUIS;
+    public static MessageUtils MESSAGEUTILS;
+    private static AxPlugin instance;
     private static ThreadedQueue<Runnable> threadedQueue;
     private static Database database;
-    public static MessageUtils MESSAGEUTILS;
 
     public static ThreadedQueue<Runnable> getThreadedQueue() {
         return threadedQueue;

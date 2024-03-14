@@ -1,6 +1,6 @@
 package com.artillexstudios.axboosters.database;
 
-import com.artillexstudios.axboosters.booster.Booster;
+import com.artillexstudios.axboosters.booster.ActiveBooster;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -12,24 +12,24 @@ public interface Database {
 
     void setup();
 
-    void addBooster(@NotNull Booster booster);
+    void addBooster(@NotNull ActiveBooster booster);
 
-    void removeBooster(@NotNull Booster booster);
+    void removeBooster(@NotNull ActiveBooster booster);
 
-    void removeActiveBooster(@NotNull Booster booster);
+    void removeActiveBooster(@NotNull ActiveBooster booster);
 
     @NotNull
-    ArrayList<Booster> getBoosters(@NotNull UUID uuid);
+    ArrayList<ActiveBooster> getBoosters(@NotNull UUID uuid);
 
     int getBoosterCount(@NotNull UUID uuid);
 
-    void activeBooster(@NotNull Booster booster);
+    void activeBooster(@NotNull ActiveBooster booster);
 
     @NotNull
-    ArrayList<Booster> getActiveBoosters();
+    ArrayList<ActiveBooster> getActiveBoosters();
 
     @NotNull
-    ArrayList<Booster> stopExpiredBoosters();
+    ArrayList<ActiveBooster> stopExpiredBoosters();
 
     void disable();
 }
