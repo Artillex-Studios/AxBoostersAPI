@@ -1,10 +1,18 @@
 package com.artillexstudios.axboosters.hooks.booster;
 
-import org.bukkit.event.Listener;
+import com.artillexstudios.axboosters.users.User;
+import net.kyori.adventure.key.Key;
+import org.bukkit.Material;
 
-public interface BoosterHook extends Listener {
-    String getName();
+public interface BoosterHook {
 
-    // if persistent is false: the plugin will unload the hook after a reload
+    Key getKey();
+
+    Material getIcon();
+
     boolean isPersistent();
+
+    default void apply(User user) {}
+
+    default void unapply(User user) {}
 }

@@ -1,28 +1,27 @@
 package com.artillexstudios.axboosters.users;
 
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class UserList {
-    public static final HashMap<Player, User> users = new HashMap<>();
+    private static final ConcurrentHashMap<Player, User> users = new ConcurrentHashMap<>();
 
-    public static void addUser(Player p, User ku) {
-        users.put(p, ku);
+    public static User addUser(Player player) {
+        final User user = new User(player);
+        users.put(player, user);
+        return user;
     }
 
-    public static void removeUser(Player p) {
-        users.remove(p);
+    public static User removeUser(Player player) {
+        return users.remove(player);
     }
 
-    public static HashMap<Player, User> getUsers() {
+    public static ConcurrentHashMap<Player, User> getUsers() {
         return users;
     }
 
-    @Nullable
-    public static User getUser(Player p) {
-        if (!users.containsKey(p)) return null;
-        return users.get(p);
+    public static User getUser(Player player) {
+        return users.get(player);
     }
 }

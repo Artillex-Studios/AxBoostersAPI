@@ -12,9 +12,6 @@ public class HookManager {
     private static final HashSet<BoosterHook> LOADED_BOOSTER_HOOKS = new HashSet<>();
     private static final HashSet<TeamHook> LOADED_TEAM_HOOKS = new HashSet<>();
 
-    public void updateHooks() {
-    }
-
     @SuppressWarnings("unused")
     public static void registerBoosterHook(@NotNull Plugin plugin, @NotNull BoosterHook hook) {
     }
@@ -34,6 +31,19 @@ public class HookManager {
     }
 
     public static boolean isSameTeam(@NotNull UUID player1, @NotNull UUID player2) {
-        return true;
+        return false;
+    }
+
+    public static void registerBoosterHook(@NotNull BoosterHook hook) {
+
+    }
+
+    public static void registerTeamHook(@NotNull TeamHook hook) {
+    }
+
+    public static void setupHooks() {
+    }
+
+    public static void updateHooks() {
     }
 }

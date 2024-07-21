@@ -1,14 +1,14 @@
-package com.artillexstudios.axboosters.booster;
+package com.artillexstudios.axboosters.boosters;
 
 import java.util.HashMap;
 
-public class Boosters {
+public class BoosterTypes {
     private static final HashMap<String, BoosterType> boosters = new HashMap<>();
 
     public static void reload() {
     }
 
-    public static HashMap<String, BoosterType> getBoosters() {
+    public static HashMap<String, BoosterType> getBoosterTypes() {
         return boosters;
     }
 }
